@@ -1,0 +1,14 @@
+# Ignore Visual Studio temporary files
+*.user
+*.suo
+
+.vs/
+
+
+# Ignore build results
+bin/
+obj/
+
+# Ignore package manager folders
+node_modules/
+.npm/

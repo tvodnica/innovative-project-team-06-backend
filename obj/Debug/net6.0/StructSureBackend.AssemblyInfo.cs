@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StructSureBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f737c273dc9f30e1926880620cd1ec17da656ec0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3afb611130da6e5b9bb19d2f518e7f2b4285096")]
 [assembly: System.Reflection.AssemblyProductAttribute("StructSureBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StructSureBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
