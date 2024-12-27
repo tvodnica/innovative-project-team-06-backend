@@ -15,4 +15,12 @@ namespace StructSureBackend.Models
         [Required]
         public string LastName { get; set; }
     }
+
+    public class UserDTO
+    {
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Password { get; set; }
+    }
 }

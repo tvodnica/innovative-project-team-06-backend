@@ -40,7 +40,7 @@ namespace StructSureBackend.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] User login)
+        public IActionResult Login([FromBody] UserDTO login)
         {
             var user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
             if (user == null)
@@ -48,7 +48,7 @@ namespace StructSureBackend.Controllers
                 return Unauthorized(new { message = "Invalid credentials." });
             }
 
-            return Ok(new { message = "Login successful." });
+            return Ok(new { message = "Login successful.", userId = user.UserId });
         }
     }
 
