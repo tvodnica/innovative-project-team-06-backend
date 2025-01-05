@@ -16,11 +16,15 @@ namespace StructSureBackend.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProject([FromBody] Project project)
+        public IActionResult CreateProject([FromBody] ProjectDTO project)
         {
-            _context.Projects.Add(project);
+            User user = _context.Users.First(user => user.UserId == project.UserId);
+
+            Project newProject = new Project(project.Title, project.Description, project.UserId, user);
+
+            _context.Projects.Add(newProject);
             _context.SaveChanges();
-            return Ok(new { message = "Project created successfully.", projectId = project.ProjectId });
+            return Ok(new { message = "Project created successfully.", projectId = newProject.ProjectId });
         }
 
         [HttpGet("{userId}")]
