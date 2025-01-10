@@ -9,7 +9,7 @@ namespace StructSureBackend.Models
         {
              
         }
-        public Project(string title, string description, int userId, User user)
+        public Project(string title, string description, int userId, string street, User user)
         {
             this.Title = title;
             this.Description = description;
@@ -17,6 +17,7 @@ namespace StructSureBackend.Models
             this.User = user;
             this.Punctures = new List<Puncture>();
             this.Finished = false;
+            this.Street = street;
         }
 
         [Key]
@@ -29,6 +30,7 @@ namespace StructSureBackend.Models
         public User User { get; set; }
         public List<Puncture> Punctures { get; set; }
         public bool Finished { get; set; }
+        public string Street { get; set; }
     }
 
     public class ProjectDTO
@@ -36,6 +38,7 @@ namespace StructSureBackend.Models
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Street { get; set; }
         [Required]
         public int UserId { get; set; }
     }

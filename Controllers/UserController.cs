@@ -52,4 +52,28 @@ namespace StructSureBackend.Controllers
         }
     }
 
+    [ApiController]
+    [Route("api/user")]
+    public class UserController : ControllerBase
+    {
+        private readonly ApiDbContext _context;
+
+        public UserController(ApiDbContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public IActionResult GetUser([FromQuery] int userId)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.UserId == userId);
+            if (user == null)
+            {
+                return Unauthorized(new { message = "User does not exist in DB." });
+            }
+
+            return Ok(user);
+        }
+    }
+
 }

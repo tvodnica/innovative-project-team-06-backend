@@ -20,7 +20,7 @@ namespace StructSureBackend.Controllers
         {
             User user = _context.Users.First(user => user.UserId == project.UserId);
 
-            Project newProject = new Project(project.Title, project.Description, project.UserId, user);
+            Project newProject = new Project(project.Title, project.Description, project.UserId, project.Street, user);
 
             _context.Projects.Add(newProject);
             _context.SaveChanges();
